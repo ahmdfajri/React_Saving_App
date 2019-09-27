@@ -1,8 +1,24 @@
 const postReducer = (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
       case 'ADD_POST':
         return state.concat([action.data]);
-      default:
+      case 'DELETE_POST':
+        return state.filter((post) => post.id !== action.id);
+      case 'EDIT_POST':
+        return state.map((post) => post.id === action.id ? { ...post, editing: !post.editing } : post)
+        case 'UPDATE':
+          return state.map((post)=>{
+            if(post.id === action.id) {
+              return {
+                 ...post,
+                 tipe:action.data.newTipe,
+                 jumlah:action.data.newJumlah,
+                 judul:action.data.newJudul,
+                 editing: !post.editing
+              }
+            } else return post;
+          })
+        default:
         return state;
     }
   }

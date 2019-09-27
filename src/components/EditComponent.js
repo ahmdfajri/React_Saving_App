@@ -19,6 +19,7 @@ class EditComponent extends Component {
         return (
             <div>
                 <form onSubmit={this.handleEdit}>
+                <tr>
                     <td>
                         <select className="form-control" ref={(select) => this.getTipe = select} >
                             <option selected>Pilih</option>
@@ -33,9 +34,10 @@ class EditComponent extends Component {
                     <td>
                         <input className="form-control" type="text" placeholder="Judul" ref={(input) => this.getJudul = input}></input>
                     </td>
-                    <button>Update</button>
+                    <button className="btn btn-success">Simpan</button>
+                    </tr>
                 </form>
-            </div>
+         </div>
         );
     }
 }
