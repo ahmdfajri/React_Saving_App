@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-md-center">
+                <div className="row justify-content-md-center" style={{padding:"4em"}}>
                     <h2>React Tabungan App (CRUD)</h2>
                 </div>
                 <div>
